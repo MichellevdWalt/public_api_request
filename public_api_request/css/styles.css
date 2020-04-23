@@ -16,7 +16,7 @@ html, body {
 body {
     font-family: "Nunito", sans-serif;
     text-align: center;
-    background: rgba(235, 235, 235, 0.9);
+    background: #0C1559;
 }
 
 header {
@@ -29,13 +29,19 @@ header {
 }
 
 header h1 {
-    font-size: 1.25em;
-    color: rgba(50, 50, 50, 0.9);
+    font-family: Didot, "Didot LT STD", "Hoefler Text", Garamond, "Times New Roman", serif;
+    font-size: 2.2em;
+    color: #d4af37;
     margin-top: 35px;
 }
 
+header h3 {
+    color: white;
+}
+
 .search-input {
-    padding: 0.4rem 1rem;
+    margin-top: 10px;
+    padding: 0.75rem 1rem;
     border: 1px solid rgba(200, 200, 200, 0.9);
     border-radius: 0.25rem 0 0 0.25rem ;
     max-width: 20rem;
@@ -49,8 +55,9 @@ header h1 {
 
 .search-submit {
     cursor: pointer;
-    height: 33px;
-    background: rgba(245, 245, 245, 0.9);
+    height: 47px;
+    width: 70px;
+    background: #d4af37;
     border-radius: 0 0.25rem 0.25rem 0;
     border: 1px solid rgba(200, 200, 200, 0.9);
     transition: .4s ease-out;
@@ -77,7 +84,7 @@ header h1 {
     margin: auto;
 }
   
-.card {
+.active:nth-child(odd) {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -87,8 +94,25 @@ header h1 {
     max-width: 360px;
     margin: 10px 10px 20px;
     padding: 10px;
-    background: rgba(245, 245, 245, 0.9);
-    border-radius: 0.25em;
+    background: white;
+    border-radius: 0.75em;
+    border: 1px solid rgba(50, 50, 50, 0.3);
+    transition: .4s ease-out;
+    overflow: hidden;
+}
+
+.active:nth-child(even) {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    cursor: pointer;
+    width: 100%;
+    max-width: 360px;
+    margin: 10px 10px 20px;
+    padding: 10px;
+    background: #d4af37;
+    border-radius: 0.75em;
     border: 1px solid rgba(50, 50, 50, 0.3);
     transition: .4s ease-out;
     overflow: hidden;
@@ -140,7 +164,7 @@ header h1 {
     min-height: 415px;
     margin: 10px auto auto;
     padding-bottom: 15px;
-    background: rgba(255, 255, 255, 1);
+    background: #d4af37;
     border-radius: 0.25em;
     border: 1px solid rgba(100, 100, 100, 0.3);
     transition: .4s ease-out;
@@ -188,7 +212,7 @@ header h1 {
     max-width: 420px;
     padding: 10px 15px 15px;;
     margin: 10px auto auto;
-    background: rgba(255, 255, 255, 1);
+    background: white;
     border-radius: 0.25em;
     border: 1px solid rgba(100, 100, 100, 0.3);
 }
@@ -199,9 +223,10 @@ header h1 {
     cursor: pointer;
     font-size: 0.85em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.9);
+    color: white;
+    font: bold;
     padding: 0.75em 1.5em;
-    background: rgba(0, 0, 0, 0.8);
+    background: #0C1559;
     border-radius: 0.35em;
     transition: .4s ease-out;
     outline: none;
@@ -259,7 +284,7 @@ header h1 {
 @media (min-width: 1024px) {
 
     .card:hover {
-        background: rgba(255, 255, 255, 1);
+        background: lightgray;
         border: 1px solid rgba(50, 50, 50, 0.9);
     }
 

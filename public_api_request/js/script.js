@@ -210,15 +210,27 @@ function addSearch(){
 }
 addSearch();
 
-// Function to filter results and change status
+//To display no results error message if no search results are found.
+function noResults(){
+    const activeCards = document.querySelectorAll('.active');
+    const errorMessage = document.querySelector('#error');
+    if(activeCards.length === 0){
+        errorMessage.textContent = "Sorry, no results found";
+     } else if(activeCards.length > 0){
+         errorMessage.textContent = "";
+     }
+}
+
+// Function to filter results and change status/ class name of cards to active or inactive
 function search(){
     const searchInput = document.querySelector('.search-input');
     const searchSubmit = document.querySelector('.search-submit');
     const cardsName = document.querySelectorAll('.card .card-name');
-    const cards = document.querySelectorAll('#cards');
+    
+
     searchSubmit.addEventListener("click", (e)=>{
+        e.preventDefault();
         const searchValue = searchInput.value;
-        console.log(cards);
         console.log(searchValue);
       cardsName.forEach(name => {
           if(name.textContent.toLowerCase().includes(searchValue.toLowerCase())){
@@ -226,20 +238,21 @@ function search(){
               name.parentNode.parentNode.style.display = "";
                 if (name.parentNode.parentNode.className === "card inactive"){
                     name.parentNode.parentNode.classList.remove("inactive");    
-                    name.parentNode.parentNode.classList.add("active");
-                     } 
-            } else if(name.parentNode.parentNode.className === "card active"){
-              name.parentNode.parentNode.classList.remove("active");
-              name.parentNode.parentNode.classList.add("inactive");
-              name.parentNode.parentNode.style.display = "none";
-            } else{
-              console.log("no match");
-              name.parentNode.parentNode.style.display = "none";
-          }
-    
+                    name.parentNode.parentNode.classList.add("active");}
+         } else if(name.parentNode.parentNode.className === "card active"){
+            name.parentNode.parentNode.classList.remove("active");
+            name.parentNode.parentNode.classList.add("inactive");
+            name.parentNode.parentNode.style.display = "none";
+            console.log("no match");
+            name.parentNode.parentNode.style.display = "none";}
+      
+        })
+        noResults();
      })
-    })
-}
+     
+     }
+
+
 
 
 
