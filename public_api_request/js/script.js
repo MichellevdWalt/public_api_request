@@ -6,7 +6,8 @@ async function results(){
     let receiveData;
     const get = await fetch('https://randomuser.me/api/?results=12&nat=GB')
     .then (data => data.json())
-    .then (data => receiveData = data);
+    .then (data => receiveData = data)
+    .catch(error => console.log("Something went wrong: " + error));
     twelvePeople = await receiveData.results;
 }
 
