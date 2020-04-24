@@ -1,6 +1,4 @@
-/**********************************************************
-*************  Treehouse Project 5   **********************
-**********************************************************/
+Treehouse Unit 5 Project
 
 Collects random mock-data of 12 people from a public API.
 
